@@ -54,8 +54,8 @@
 
     /* ====== HEADER / HERO ====== */
     header {
-      height: 100vh;
-      background: url('images/Foie-gras-maison.webp') center/cover no-repeat;
+      height: 80vh;
+      background: url('images/Foie-gras-maison_waifu2x_photo_noise1_scale.webp') center/cover no-repeat;
       background-attachment: fixed;
       background-size: cover;       /* remplit le conteneur */
       background-position: center;  /* centre l’image */
