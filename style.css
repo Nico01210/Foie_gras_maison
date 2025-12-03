@@ -57,6 +57,8 @@
       height: 100vh;
       background: url('images/Foie-gras-maison.webp') center/cover no-repeat;
       background-attachment: fixed;
+      background-size: cover;       /* remplit le conteneur */
+      background-position: center;  /* centre l’image */
       position: relative;
       display: flex;
       justify-content: center;
@@ -66,6 +68,31 @@
       image-rendering: crisp-edges;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+    }
+
+    /* Fix pour mobile - background-attachment: fixed ne fonctionne pas bien sur iOS */
+    @supports (-webkit-touch-callout: none) {
+      header {
+        background-attachment: scroll;
+      }
+    }
+
+    @media (max-width: 767px) {
+      header {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+        height: 70vh; /* Hauteur réduite pour moins zoomer l'image */
+        min-height: 400px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
     }
 
     header::before {
@@ -384,4 +411,7 @@
       .contact-item {
         flex: 1;
       }
+        header {
+    background-position: top;  /* recentre le header pour mobiles */
+  }
     }
